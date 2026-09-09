@@ -6,7 +6,7 @@
 
 > 回测 SPY 日线 EMA20，收盘价高于 EMA20 持仓，低于 EMA20 空仓。
 
-系统会自动完成策略标准化、指标计算、Signal 生成、历史回测，并与 Buy & Hold 进行对比。结果可保存在本地并复核，输出包括：
+系统会自动完成策略标准化、指标计算、Signal 生成、历史回测，并与 Buy & Hold 进行对比。运行完成后，入口会直接返回总收益率、交易次数、最大回撤和买入持有收益，用户不需要打开 Markdown 文件。结果可保存在本地并复核，输出包括：
 
 - Strategy Contract
 - Signals
@@ -23,7 +23,7 @@
 - Drawdown Curve
 - JSON、CSV、Markdown
 
-### Free v0.1 支持范围
+### Free v0.1.2 支持范围
 
 - Single Asset、Daily、Long / Cash
 - EMA、SMA、RSI
@@ -35,7 +35,7 @@
 - Basic Equity Chart、Basic Drawdown Chart
 - User-provided local CSV
 
-Free v0.1 不支持 MACD、Bollinger Bands、Cross / Crossunder、做空、杠杆、分钟数据、多标的组合、参数优化、自动抓取行情、券商连接、实盘交易或专业 Word 研究报告。
+Free v0.1.2 不支持 MACD、Bollinger Bands、Cross / Crossunder、做空、杠杆、分钟数据、多标的组合、参数优化、自动抓取行情、券商连接、实盘交易或专业 Word 研究报告。
 
 历史回测不代表未来表现。本项目仅用于研究、教育和策略验证，不构成投资建议。
 
@@ -49,7 +49,7 @@ For example:
 
 > Backtest SPY on daily bars using EMA20. Stay long when the close is above EMA20 and move to cash when the close is below EMA20.
 
-The system automatically normalizes the strategy, calculates indicators, generates signals, runs the historical backtest, and compares the strategy with Buy & Hold. Results can be saved and reviewed locally. Outputs include:
+The system automatically normalizes the strategy, calculates indicators, generates signals, runs the historical backtest, and compares the strategy with Buy & Hold. The final entrypoint output directly shows total return, trade count, maximum drawdown, and Buy & Hold return, so users do not need to open the Markdown file. Results can be saved and reviewed locally. Outputs include:
 
 - Strategy Contract
 - Signals
@@ -66,7 +66,7 @@ The system automatically normalizes the strategy, calculates indicators, generat
 - Drawdown Curve
 - JSON, CSV, and Markdown artifacts
 
-### Free v0.1 scope
+### Free v0.1.2 scope
 
 - Single Asset, Daily, Long / Cash
 - EMA, SMA, and RSI
@@ -78,7 +78,7 @@ The system automatically normalizes the strategy, calculates indicators, generat
 - Basic equity and drawdown charts
 - User-provided local CSV data
 
-Free v0.1 does not support MACD, Bollinger Bands, Cross / Crossunder rules, shorting, leverage, minute data, multi-asset portfolios, parameter optimization, automatic market-data fetching, broker connections, live trading, or professional Word research reports.
+Free v0.1.2 does not support MACD, Bollinger Bands, Cross / Crossunder rules, shorting, leverage, minute data, multi-asset portfolios, parameter optimization, automatic market-data fetching, broker connections, live trading, or professional Word research reports.
 
 The Free edition does not automatically fetch market data, connect to brokers, or place live orders.
 

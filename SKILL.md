@@ -5,6 +5,8 @@ description: "用于本地单标的历史数据研究与策略验证，支持 EM
 
 # 泽洋策略实验室 Free / Zeyang Strategy Lab Free
 
+当前本地升级版本：v0.1.2。
+
 ## 中文简介
 
 这是一个用于本地、单标的、日线历史数据研究与策略验证的免费 Skill。用户必须提供 CSV 文件；标准入口是 `scripts/run_free_research.py`，必须明确指定 `--input` 路径，不自动获取数据。
@@ -27,9 +29,9 @@ This skill is for historical research and strategy validation only, not investme
 - RSI: below a declared lower threshold means long; above a declared upper threshold means cash.
 - Long/cash only, with signal at close and execution on the following bar.
 
-优先从用户请求和输入数据中解析标的、日线周期、本地输入文件、规则、执行假设和成本假设。只有在必要字段确实缺失或策略存在重大歧义时才询问用户。输入 CSV 必须包含 `date` 和 `close`，`open` 可选。使用默认的 `next_open` 执行方式时，如果缺少 `open`，将正式回退到下一根 K 线的 `close`，并产生警告。返回生成的 Strategy Contract、摘要、核心指标、警告和文件路径。明确说明结果仅用于研究，不构成投资建议。
+优先从用户请求和输入数据中解析标的、日线周期、本地输入文件、规则、执行假设和成本假设。只有在必要字段确实缺失或策略存在重大歧义时才询问用户。输入 CSV 必须包含 `date` 和 `close`，`open` 可选。使用默认的 `next_open` 执行方式时，如果缺少 `open`，将正式回退到下一根 K 线的 `close`，并产生警告。返回生成的 Strategy Contract、摘要、核心指标、警告和文件路径。运行完成后，入口会直接返回总收益率、交易次数、最大回撤和买入持有收益，用户不需要打开 Markdown 文件。明确说明结果仅用于研究，不构成投资建议。
 
-Prefer to parse the symbol, daily timeframe, local input file, rule, execution assumption, and cost assumptions from the user's request and input data. Ask the user only when a required field is genuinely missing or the strategy has a material ambiguity. The input CSV requires `date` and `close`; `open` is optional. With the default `next_open` execution, a missing `open` formally falls back to the next bar's `close` and produces a warning. Return the generated Strategy Contract, summary, core metrics, warnings, and artifact paths. State that the result is research only and not investment advice.
+Prefer to parse the symbol, daily timeframe, local input file, rule, execution assumption, and cost assumptions from the user's request and input data. Ask the user only when a required field is genuinely missing or the strategy has a material ambiguity. The input CSV requires `date` and `close`; `open` is optional. With the default `next_open` execution, a missing `open` formally falls back to the next bar's `close` and produces a warning. Return the generated Strategy Contract, summary, core metrics, warnings, and artifact paths. The final entrypoint output directly shows total return, trade count, maximum drawdown, and Buy & Hold return, so users do not need to open the Markdown file. State that the result is research only and not investment advice.
 
 ## 不支持的请求 / Unsupported requests
 
