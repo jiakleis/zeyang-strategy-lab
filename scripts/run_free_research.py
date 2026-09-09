@@ -196,6 +196,20 @@ def main() -> int:
         return _emit(_failure("free_artifacts", f"{type(exc).__name__}: {exc}", "请检查输出目录权限和基础图表依赖。", progress), 2)
 
     progress.extend(["✓ 回测完成", "✓ 基础图表完成", "✓ Free 研究产物完成"])
+    total_return = backtest["metrics"].get("total_return")
+    trade_count = int(backtest["metrics"].get("trades", 0))
+    max_drawdown = backtest["metrics"].get("max_drawdown")
+    benchmark_total_return = backtest["benchmark"]["metrics"].get("total_return")
+
+    def _pct(value: Any) -> str:
+        return "—" if value is None else f"{float(value) * 100:.2f}%"
+
+    user_summary = (
+        f"总收益率：{_pct(total_return)}；"
+        f"交易次数：{trade_count} 次；"
+        f"最大回撤：{_pct(max_drawdown)}；"
+        f"买入持有收益：{_pct(benchmark_total_return)}。"
+    )
     return _emit({
         "status": "pass",
         "message": "Free 回测完成。",
@@ -203,6 +217,13 @@ def main() -> int:
         "run_dir": str(run_dir),
         "strategy_contract": str(run_dir / "strategy-contract.json"),
         "contract_hash": contract["contract_hash"],
+        "user_summary": user_summary,
+        "key_metrics": {
+            "strategy_total_return": total_return,
+            "trade_count": trade_count,
+            "max_drawdown": max_drawdown,
+            "benchmark_total_return": benchmark_total_return,
+        },
         "backtest": str(run_dir / "backtest.json"),
         "summary": str(run_dir / "Summary.md"),
         "charts": [str(path) for path in sorted(charts_dir.glob("*.png"))],

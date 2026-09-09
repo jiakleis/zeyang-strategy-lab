@@ -13,14 +13,14 @@
   },
   {
     "relative_path": "README.md",
-    "sha256": "9a86684bf3f027556bdcdae308fc4952da92732e054bcb234fb6eb96cb4b5cf7",
-    "file_size": 2609,
+    "sha256": "4e19dbd1c051181a11636eb824fa305b1a51a56010cbf47aa742e09c37ef10d9",
+    "file_size": 5401,
     "build_schema_version": "1.0"
   },
   {
     "relative_path": "SKILL.md",
-    "sha256": "265334db3f1c417a6c2fdc219e3c3d655cd46b7fddc64f13fb29fe22e60b4ccc",
-    "file_size": 2144,
+    "sha256": "aa9ee73159d58018b9cb7d77894dc3e964b727973587fe07f7ee9a3b0fc64654",
+    "file_size": 4844,
     "build_schema_version": "1.0"
   },
   {
@@ -73,8 +73,8 @@
   },
   {
     "relative_path": "scripts/run_free_research.py",
-    "sha256": "919196cebf20f6c2f88f86960fdbba1bf08aa8c592d0f9236f8c0b125d705bda",
-    "file_size": 9465,
+    "sha256": "ccbe1330e80d51164fadbfe4889a06af83fe2732a21c60db46741faede2bfde8",
+    "file_size": 10341,
     "build_schema_version": "1.0"
   },
   {
