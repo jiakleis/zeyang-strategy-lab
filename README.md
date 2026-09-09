@@ -1,18 +1,88 @@
 # Zeyang Strategy Lab Free
 
-Zeyang Strategy Lab Free is a local tool for historical strategy research and teaching validation. It uses your local CSV data; it does not fetch market data automatically and it does not place orders.
+**泽洋策略研究室 Free｜用自然语言描述策略，在本地完成可审计的历史回测。**
 
-## Current scope
+泽洋策略研究室 Free 是一个用于投资研究、策略验证和教学学习的本地历史回测 Skill。用户提供自己的历史行情 CSV，并用自然语言描述简单策略，例如：
 
-- Single asset, long/cash historical research.
-- Daily bars.
-- EMA, SMA, and RSI.
-- Close-versus-EMA/SMA rules and RSI threshold rules.
-- Basic commission and slippage assumptions.
-- Buy-and-hold comparison.
-- Total return, CAGR where applicable, maximum drawdown, exposure, trade count, and basic equity/drawdown charts.
+> 回测 SPY 日线 EMA20，收盘价高于 EMA20 持仓，低于 EMA20 空仓。
 
-Free does not support MACD, Bollinger Bands, crossover/crossunder rules, shorting, leverage, minute data, multi-asset portfolios, parameter optimization, or professional Word research reports.
+系统会自动完成策略标准化、指标计算、Signal 生成、历史回测，并与 Buy & Hold 进行对比。结果可保存在本地并复核，输出包括：
+
+- Strategy Contract
+- Signals
+- Validation
+- Backtest
+- Trade Ledger
+- Markdown Summary
+- Total Return
+- CAGR
+- Maximum Drawdown
+- Exposure
+- Trade Count
+- Equity Curve
+- Drawdown Curve
+- JSON、CSV、Markdown
+
+### Free v0.1 支持范围
+
+- Single Asset、Daily、Long / Cash
+- EMA、SMA、RSI
+- Close vs EMA / SMA
+- RSI Threshold
+- Basic Commission、Basic Slippage
+- Buy & Hold
+- Total Return、CAGR、Maximum Drawdown、Exposure、Trade Count
+- Basic Equity Chart、Basic Drawdown Chart
+- User-provided local CSV
+
+Free v0.1 不支持 MACD、Bollinger Bands、Cross / Crossunder、做空、杠杆、分钟数据、多标的组合、参数优化、自动抓取行情、券商连接、实盘交易或专业 Word 研究报告。
+
+历史回测不代表未来表现。本项目仅用于研究、教育和策略验证，不构成投资建议。
+
+---
+
+**Zeyang Strategy Lab Free | Describe a strategy in natural language and run an auditable historical backtest locally.**
+
+Zeyang Strategy Lab Free is a local historical backtesting Skill for investment research, strategy validation, and education. Users provide their own historical market data in CSV format and describe a simple strategy in natural language.
+
+For example:
+
+> Backtest SPY on daily bars using EMA20. Stay long when the close is above EMA20 and move to cash when the close is below EMA20.
+
+The system automatically normalizes the strategy, calculates indicators, generates signals, runs the historical backtest, and compares the strategy with Buy & Hold. Results can be saved and reviewed locally. Outputs include:
+
+- Strategy Contract
+- Signals
+- Validation
+- Backtest
+- Trade Ledger
+- Markdown Summary
+- Total Return
+- CAGR
+- Maximum Drawdown
+- Market Exposure
+- Trade Count
+- Equity Curve
+- Drawdown Curve
+- JSON, CSV, and Markdown artifacts
+
+### Free v0.1 scope
+
+- Single Asset, Daily, Long / Cash
+- EMA, SMA, and RSI
+- Close vs EMA / SMA
+- RSI threshold rules
+- Basic commission and slippage
+- Buy & Hold comparison
+- Total Return, CAGR, Maximum Drawdown, Exposure, and Trade Count
+- Basic equity and drawdown charts
+- User-provided local CSV data
+
+Free v0.1 does not support MACD, Bollinger Bands, Cross / Crossunder rules, shorting, leverage, minute data, multi-asset portfolios, parameter optimization, automatic market-data fetching, broker connections, live trading, or professional Word research reports.
+
+The Free edition does not automatically fetch market data, connect to brokers, or place live orders.
+
+Historical backtests do not predict future performance. This project is for research, education, and strategy validation only and does not constitute investment advice.
 
 ## Install
 
